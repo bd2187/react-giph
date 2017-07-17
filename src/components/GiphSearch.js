@@ -51,7 +51,7 @@ export default class GiphSearch extends Component {
           </Link>
           <Nav updateSearch={this.updateSearch}/>
         </header>
-        
+
         <SearchResults
           giphs={giphs}
           isFetching={isFetching}
