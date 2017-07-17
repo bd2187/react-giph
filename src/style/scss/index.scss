@@ -3,21 +3,19 @@
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-}
-
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: #141414;
+}
 
-
-  background: firebrick;
+a {
+  text-decoration: none;
 }
 
 header {
-  // background: blue;
+  padding: .3em;
   .homeLink {
     display: inline-block;
     color: #FFF;
@@ -29,8 +27,6 @@ header {
 }
 
 .searchBar {
-  background: pink;
-
   input[type="text"],
   .searchBtn {
     font-size: 1em;
@@ -47,6 +43,8 @@ header {
   .searchBtn {
     width: 10%;
     margin-left: -10%;
+    color: #FFF;
+    background: linear-gradient(208deg, #3c489c, #d45658, #bec13e);
   }
 }
 
@@ -67,7 +65,7 @@ header {
 
 .giphLink {
   display: block;
-  background: pink;
+  background: linear-gradient(208deg, #3c489c, #d45658, #bec13e);
   min-width: 47%;
   max-width: 47%;
   margin: 1.5%;
@@ -90,6 +88,8 @@ header {
 
   border-radius: 50%;
   color: #fff;
+
+  background: linear-gradient(208deg, #3c489c, #d45658, #bec13e);
 }
 
 
