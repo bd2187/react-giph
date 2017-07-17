@@ -1,12 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function Giph({giph}) {
-  const { embed_url } = giph
   return (
     <li>
-      <a href={embed_url}>
+      <Link to={giph.embed_url}>
         <img src={giph.images.fixed_height.url} alt=""/>
-      </a>
+      </Link>
     </li>
   );
 }
