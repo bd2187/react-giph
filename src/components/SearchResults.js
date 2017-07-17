@@ -1,9 +1,19 @@
 import React from 'react'
 
-export default function SearchResults (props) {
+function SearchResults ({giphs, error, isFetching}) {
+  console.log(error === "stuff")
   return (
     <div className="searchResults">
-      Search Results
+      { isFetching && "Loading" }
+
+      { error === ''
+        ? <ul>
+            {console.log(giphs)}
+          </ul>
+        : <h1>error</h1>
+      }
     </div>
   )
 }
+
+export default SearchResults;

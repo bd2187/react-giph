@@ -7,6 +7,7 @@ export default class GiphSearch extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      search: '',
       giphs: [],
       isFetching: true,
       error: ''
@@ -14,13 +15,26 @@ export default class GiphSearch extends Component {
   }
 
   componentDidMount() {
-    api();
+    api()
+    .then((giphs) => this.setState({
+      giphs,
+      isFetching: false
+    }))
+    .catch((err) => this.setState({
+      isFetching: false,
+      error: err
+    }))
   }
+
   render() {
+    const { giphs, isFetching, error } = this.state;
     return (
       <div className="giphSearch">
         <Nav />
-        <SearchResults />
+        <SearchResults
+          giphs={giphs}
+          isFetching={isFetching}
+          error={error}/>
       </div>
     )
   }
