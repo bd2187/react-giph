@@ -12,18 +12,20 @@ function Giph({giph}) {
 }
 
 function SearchResults ({giphs, error, isFetching}) {
+  console.log(error);
   return (
     <div className="searchResults">
-      { isFetching && "Loading" }
-
-      { error === ''
-        ? <ul>
+      { (isFetching)
+        ? "Loading"
+        : <ul>
             {giphs.map(function(giph){
               return <Giph giph={giph} key={giph.id}/>
             })}
           </ul>
-        : <h1>{error}</h1>
       }
+
+      { error && <h1>{error.toString()}</h1> }
+
     </div>
   )
 }
