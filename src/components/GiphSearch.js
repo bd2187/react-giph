@@ -1,27 +1,26 @@
 import React, { Component } from 'react';
-
-
-function Nav (props) {
-  return (
-    <form>
-      <input
-        type="text"
-        value=""/>
-      <input
-        type="submit"
-        value="Search"/>
-    </form>
-  )
-}
+import SearchResults from './SearchResults';
+import Nav from './Nav';
+import api from '../utils/api';
 
 export default class GiphSearch extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      giphs: [],
+      isFetching: true,
+      error: ''
+    }
+  }
+
+  componentDidMount() {
+    api();
   }
   render() {
     return (
       <div className="giphSearch">
         <Nav />
+        <SearchResults />
       </div>
     )
   }
