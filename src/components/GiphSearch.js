@@ -42,7 +42,7 @@ export default class GiphSearch extends Component {
   }
 
   render() {
-    const { giphs, isFetching, error } = this.state;
+    const { giphs, isFetching, error, search } = this.state;
     return (
       <div className="giphSearch">
         <header>
@@ -55,7 +55,8 @@ export default class GiphSearch extends Component {
         <SearchResults
           giphs={giphs}
           isFetching={isFetching}
-          error={error}/>
+          error={error}
+          search={search}/>
       </div>
     )
   }

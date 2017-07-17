@@ -1,4 +1,6 @@
 import React from 'react'
+import NoneFound from './NoneFound';
+import ErrorMessage from './ErrorMessage';
 // import { Link } from 'react-router-dom';
 
 function Giph({giph}) {
@@ -11,31 +13,25 @@ function Giph({giph}) {
   );
 }
 
-function checkGiphsLength(giphs) {
-  if (giphs.length > 0) {
-    return (
-      <ul>
-          {giphs.map(function(giph){
-            return <Giph giph={giph} key={giph.id}/>
-          })}
-      </ul>
-    )
-  } else {
-    return <p> Sorry, no giphs found</p>
-  }
-
+function checkGiphsLength (giphs, search) {
+  return giphs.length > 0
+    ? (<ul>
+        {giphs.map(function(giph){
+          return <Giph giph={giph} key={giph.id}/>
+        })}
+      </ul>)
+    : <NoneFound search={search}/>
 }
 
-function SearchResults ({giphs, error, isFetching}) {
+function SearchResults ({giphs, error, isFetching, search}) {
   return (
     <div className="searchResults">
       { (isFetching)
         ? "Loading"
-        : checkGiphsLength(giphs)
+        : checkGiphsLength(giphs, search)
       }
-
-      { error && <h1>{error.toString()}</h1> }
-
+      
+      { error && <ErrorMessage error={error} /> }
     </div>
   )
 }
