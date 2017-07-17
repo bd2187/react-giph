@@ -5,8 +5,8 @@ import ErrorMessage from './ErrorMessage';
 function Giph({giph}) {
   return (
     <li>
-      <a href={giph.embed_url} target="_blank">
-        <img src={giph.images.fixed_height.url} alt=""/>
+      <a className="giphLink" href={giph.embed_url} target="_blank">
+        <img className="giph" src={giph.images.fixed_height.url} alt=""/>
       </a>
     </li>
   );

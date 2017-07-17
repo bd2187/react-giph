@@ -20,17 +20,16 @@ class Nav extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="searchBar" onSubmit={this.handleSubmit}>
         <input
           type="text"
           value={this.state.value}
           onChange={this.handleChange}
           placeholder="Search Giphs..."
-          autocomplete="off"/>
-        <input
-          type="submit"
-          value="Search"
-          disabled={!this.state.value}/>
+          autoComplete="off"/>
+        <button disabled={!this.state.value}>
+          <i className="fa fa-search" aria-hidden="true"></i>
+        </button>
       </form>
     )
   }
