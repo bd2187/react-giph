@@ -1,7 +1,6 @@
 import React from 'react'
 import NoneFound from './NoneFound';
 import ErrorMessage from './ErrorMessage';
-// import { Link } from 'react-router-dom';
 
 function Giph({giph}) {
   return (
@@ -30,7 +29,7 @@ function SearchResults ({giphs, error, isFetching, search}) {
         ? "Loading"
         : checkGiphsLength(giphs, search)
       }
-      
+
       { error && <ErrorMessage error={error} /> }
     </div>
   )

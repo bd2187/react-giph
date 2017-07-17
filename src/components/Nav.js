@@ -24,10 +24,13 @@ class Nav extends Component {
         <input
           type="text"
           value={this.state.value}
-          onChange={this.handleChange}/>
+          onChange={this.handleChange}
+          placeholder="Search Giphs..."
+          autocomplete="off"/>
         <input
           type="submit"
-          value="Search"/>
+          value="Search"
+          disabled={!this.state.value}/>
       </form>
     )
   }
