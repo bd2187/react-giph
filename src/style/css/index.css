@@ -428,6 +428,7 @@ body {
 
 header .homeLink {
   display: inline-block;
+  color: #FFF;
   font-weight: bold;
   font-size: 2em;
   text-transform: uppercase;
@@ -439,7 +440,7 @@ header .homeLink {
 }
 
 .searchBar input[type="text"],
-.searchBar button {
+.searchBar .searchBtn {
   font-size: 1em;
   padding: .5em 0;
   margin: 0;
@@ -451,7 +452,7 @@ header .homeLink {
   padding-left: .3em;
 }
 
-.searchBar button {
+.searchBar .searchBtn {
   width: 10%;
   margin-left: -10%;
 }
@@ -478,6 +479,17 @@ header .homeLink {
 .giph {
   min-width: 100%;
   max-width: 100%;
+}
+
+.toTop {
+  position: fixed;
+  bottom: .5em;
+  right: .5em;
+  font-size: 2em;
+  background: orange;
+  padding: .2em;
+  border-radius: 50%;
+  color: #fff;
 }
 
 .clearfix::after {

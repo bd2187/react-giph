@@ -27,7 +27,7 @@ class Nav extends Component {
           onChange={this.handleChange}
           placeholder="Search Giphs..."
           autoComplete="off"/>
-        <button disabled={!this.state.value}>
+        <button className="searchBtn" disabled={!this.state.value}>
           <i className="fa fa-search" aria-hidden="true"></i>
         </button>
       </form>
