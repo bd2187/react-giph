@@ -26,11 +26,16 @@ export default class GiphSearch extends Component {
     }))
   }
 
+  updateSearch = (val) => {
+    this.setState({search: val});
+  }
+
   render() {
     const { giphs, isFetching, error } = this.state;
+    console.log(this.state.search);
     return (
       <div className="giphSearch">
-        <Nav />
+        <Nav updateSearch={this.updateSearch}/>
         <SearchResults
           giphs={giphs}
           isFetching={isFetching}

@@ -10,10 +10,16 @@ class Nav extends Component {
   handleChange = (e) => {
     this.setState({value: e.target.value})
   }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { value } = this.state;
+    this.props.updateSearch(value);
+  }
+
   render() {
-    console.log(this.state.value);
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input
           type="text"
           value={this.state.value}
