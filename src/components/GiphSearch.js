@@ -14,8 +14,8 @@ export default class GiphSearch extends Component {
     }
   }
 
-  componentDidMount() {
-    api()
+  fetchGiphs = (type, val) => {
+    api(type, val)
     .then((giphs) => this.setState({
       giphs,
       isFetching: false
@@ -26,13 +26,18 @@ export default class GiphSearch extends Component {
     }))
   }
 
+  componentDidMount() {
+    this.fetchGiphs("trending")
+  }
+
   updateSearch = (val) => {
-    this.setState({search: val});
+    this.setState({search: val, isFetching: true});
+    this.fetchGiphs("search", val)
   }
 
   render() {
     const { giphs, isFetching, error } = this.state;
-    console.log(this.state.search);
+    console.log(this.state);
     return (
       <div className="giphSearch">
         <Nav updateSearch={this.updateSearch}/>

@@ -1,7 +1,16 @@
 import axios from 'axios';
 
-export default function api() {
-  const endpoint = "http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC&limit=50";
+export default function api(type = "trending", val = null) {
+  let endpoint;
+
+  if (type === "trending") {
+    endpoint = "http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC&limit=50";
+    console.log(type);
+  }
+  else if (type === "search") {
+    endpoint =`http://api.giphy.com/v1/gifs/search?q=${val}&api_key=dc6zaTOxFJmzC&limit=50`;
+    console.log(type)
+  }
 
   return axios.get(endpoint)
           .then( (res) => res.data.data )
