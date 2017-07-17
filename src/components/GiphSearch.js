@@ -3,6 +3,7 @@ import SearchResults from './SearchResults';
 import Nav from './Nav';
 import api from '../utils/api';
 
+import { Link } from 'react-router-dom'
 export default class GiphSearch extends Component {
   constructor(props) {
     super(props);
@@ -33,14 +34,23 @@ export default class GiphSearch extends Component {
   updateSearch = (val) => {
     this.setState({search: val, isFetching: true});
     this.fetchGiphs("search", val)
+    this.props.history.push(`/search/${val}`);
+  }
+
+  backToTrending = () => {
+    this.fetchGiphs("trending");
   }
 
   render() {
     const { giphs, isFetching, error } = this.state;
-    console.log(this.state);
     return (
       <div className="giphSearch">
-        <Nav updateSearch={this.updateSearch}/>
+        <header>
+          <Link to="/" onClick={this.backToTrending}>
+            Giphy
+          </Link>
+          <Nav updateSearch={this.updateSearch}/>
+        </header>
         <SearchResults
           giphs={giphs}
           isFetching={isFetching}

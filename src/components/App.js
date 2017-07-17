@@ -13,6 +13,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route path="/" component={GiphSearch}/>
+          <Route path="/search/:giph" component={GiphSearch}/>
         </Switch>
       </Router>
     );

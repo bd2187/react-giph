@@ -15,6 +15,7 @@ class Nav extends Component {
     e.preventDefault();
     const { value } = this.state;
     this.props.updateSearch(value);
+    this.setState({value: ''});
   }
 
   render() {
