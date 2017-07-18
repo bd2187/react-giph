@@ -1,4 +1,12 @@
 @import "normalize";
+
+//mixins
+@mixin mediaQuery($pixels) {
+  @media screen and (min-width: $pixels) {
+    @content
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -54,6 +62,7 @@ header {
   ul {
     // background: gold;
     width: 95%;
+    max-width: 1255px;
     margin: 0 auto;
   }
 }
@@ -71,6 +80,17 @@ header {
   margin: 1.5%;
 
   float: left;
+  @include mediaQuery (700px) {
+    min-width: 30%;
+    max-width: 30%;
+    margin: 1.6%;
+  }
+
+  @include mediaQuery (1000px) {
+    min-width: 22%;
+    max-width: 22%;
+    margin: 1.5%;
+  }
 }
 
 .giph {

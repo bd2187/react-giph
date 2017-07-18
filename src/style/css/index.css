@@ -463,6 +463,7 @@ header .homeLink {
 
 .searchResults ul {
   width: 95%;
+  max-width: 1255px;
   margin: 0 auto;
 }
 
@@ -480,6 +481,22 @@ header .homeLink {
   max-width: 47%;
   margin: 1.5%;
   float: left;
+}
+
+@media screen and (min-width: 700px) {
+  .giphLink {
+    min-width: 30%;
+    max-width: 30%;
+    margin: 1.6%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .giphLink {
+    min-width: 22%;
+    max-width: 22%;
+    margin: 1.5%;
+  }
 }
 
 .giph {
