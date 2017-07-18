@@ -45,7 +45,7 @@ export default class GiphSearch extends Component {
     const { giphs, isFetching, error, search } = this.state;
     return (
       <div className="giphSearch">
-        <header id="top">
+        <header id="top contain">
           <Link className="homeLink" to="/" onClick={this.backToTrending}>
             Giphy
           </Link>

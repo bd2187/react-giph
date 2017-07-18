@@ -14,7 +14,7 @@ function Giph({giph}) {
 
 function checkGiphsLength (giphs, search) {
   return giphs.length > 0
-    ? (<ul className="clearfix">
+    ? (<ul className="clearfix contain">
         {giphs.map(function(giph){
           return <Giph giph={giph} key={giph.id}/>
         })}

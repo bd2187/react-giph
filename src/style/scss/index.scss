@@ -31,6 +31,24 @@ header {
     font-size: 2em;
     text-transform: uppercase;
     padding: .1em;
+    // background: blue;
+  }
+
+  @include mediaQuery (650px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.5%;
+    .homeLink {
+      width: 30%;
+      max-width: 105px;
+    }
+    .searchBar {
+      width: 50%;
+      max-width: 516px;
+      display: flex;
+      align-items: center;
+    }
   }
 }
 
@@ -54,11 +72,18 @@ header {
     color: #FFF;
     background: linear-gradient(208deg, #3c489c, #d45658, #bec13e);
   }
+  // background: orange;
+}
+
+header {
+  width: 95%;
+  max-width: 1255px;
+  // background: pink;
+  margin: 0 auto;
 }
 
 .searchResults {
   // background: orange;
-
   ul {
     // background: gold;
     width: 95%;
