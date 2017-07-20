@@ -6,7 +6,7 @@ function Giph({giph}) {
   return (
     <li>
       <a className="giphLink" href={giph.embed_url} target="_blank">
-        <img className="giph" src={giph.images.fixed_height.url} alt=""/>
+        <img className="giph" src={giph.images.fixed_height_downsampled.url} alt=""/>
       </a>
     </li>
   );
@@ -26,8 +26,8 @@ function SearchResults ({giphs, error, isFetching, search}) {
   return (
     <div className="searchResults">
       { (isFetching)
-        ? "Loading"
-        : checkGiphsLength(giphs, search)
+        ? <div className="loader"></div>
+        :  checkGiphsLength(giphs, search)
       }
 
       { error && <ErrorMessage error={error} /> }
