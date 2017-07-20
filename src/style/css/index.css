@@ -499,6 +499,10 @@ header .homeLink {
   padding-left: .5em;
 }
 
+.searchBar input[type="text"]:focus {
+  outline: none;
+}
+
 .searchBar .searchBtn {
   width: 10%;
   margin-left: -10%;

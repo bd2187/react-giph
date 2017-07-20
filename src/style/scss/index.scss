@@ -73,6 +73,7 @@ header {
   input[type="text"] {
     width: 100%;
     padding-left: .5em;
+    &:focus { outline: none; }
   }
 
   .searchBtn {
