@@ -565,6 +565,13 @@ header {
   clear: both;
 }
 
+.noneFound {
+  text-align: center;
+  color: #FFF;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .loader {
   border: 10px solid #f3f3f3;
   /* Light grey */
