@@ -2,7 +2,7 @@ import React from 'react';
 
 function ErrorMessage ({error}) {
   return (
-    <div>
+    <div className="errorMessage">
       {error.toString()}
     </div>
   )

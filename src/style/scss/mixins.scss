@@ -1,0 +1,11 @@
+//mixins
+@mixin giphLinkDimensions($width, $margin){
+  width: $width;
+  margin: $margin;
+}
+
+@mixin mediaQuery($pixels) {
+  @media screen and (min-width: $pixels) {
+    @content
+  }
+}

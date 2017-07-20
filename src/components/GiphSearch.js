@@ -58,7 +58,7 @@ export default class GiphSearch extends Component {
           error={error}
           search={search}/>
 
-        <a className="toTop" href="#top">
+        <a id="toTop" href="#top">
           <i className="fa fa-arrow-up" aria-hidden="true"></i>
         </a>
       </div>

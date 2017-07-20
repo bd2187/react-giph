@@ -491,20 +491,19 @@ header .homeLink {
   width: 10%;
   margin-left: -10%;
   color: #FFF;
+}
+
+#toTop,
+.searchBtn,
+.giphLink {
   background: -webkit-linear-gradient(309deg, #8eff4e, #4effab, #4ee6ff);
   background: -o-linear-gradient(309deg, #8eff4e, #4effab, #4ee6ff);
   background: linear-gradient(141deg, #8eff4e, #4effab, #4ee6ff);
 }
 
-header {
-  width: 95%;
+header, ul {
   max-width: 1255px;
-  margin: 0 auto;
-}
-
-.searchResults ul {
   width: 95%;
-  max-width: 1255px;
   margin: 0 auto;
 }
 
@@ -515,48 +514,37 @@ header {
 
 .giphLink {
   display: block;
-  background: -webkit-linear-gradient(309deg, #8eff4e, #4effab, #4ee6ff);
-  background: -o-linear-gradient(309deg, #8eff4e, #4effab, #4ee6ff);
-  background: linear-gradient(141deg, #8eff4e, #4effab, #4ee6ff);
   float: left;
-  min-width: 47%;
-  max-width: 47%;
+  width: 47%;
   margin: 1.5%;
 }
 
 @media screen and (min-width: 700px) {
   .giphLink {
-    min-width: 30%;
-    max-width: 30%;
+    width: 30%;
     margin: 1.6%;
   }
 }
 
 @media screen and (min-width: 1000px) {
   .giphLink {
-    min-width: 22%;
-    max-width: 22%;
+    width: 22%;
     margin: 1.5%;
   }
 }
 
 .giph {
-  min-width: 100%;
-  max-width: 100%;
+  width: 100%;
 }
 
-.toTop {
+#toTop {
   position: fixed;
   bottom: .5em;
   right: .5em;
   font-size: 2em;
-  background: orange;
   padding: .2em;
   border-radius: 50%;
   color: #fff;
-  background: -webkit-linear-gradient(309deg, #8eff4e, #4effab, #4ee6ff);
-  background: -o-linear-gradient(309deg, #8eff4e, #4effab, #4ee6ff);
-  background: linear-gradient(141deg, #8eff4e, #4effab, #4ee6ff);
 }
 
 .clearfix::after {
@@ -565,7 +553,8 @@ header {
   clear: both;
 }
 
-.noneFound {
+.noneFound,
+.errorMessage {
   text-align: center;
   color: #FFF;
   max-width: 800px;
@@ -574,9 +563,7 @@ header {
 
 .loader {
   border: 10px solid #f3f3f3;
-  /* Light grey */
   border-top: 10px solid #4effab;
-  /* Blue */
   border-radius: 50%;
   width: 5em;
   height: 5em;

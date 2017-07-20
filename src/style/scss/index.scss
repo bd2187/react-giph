@@ -1,19 +1,14 @@
 @import "normalize";
+@import "mixins";
 
 // variables
 $darkGrey: #141414;
+$contentMaxWidth: 1255px;
+$limeGreen: #4effab;
 
-//mixins
-@mixin giphLinkDimensions($minMax, $margin){
-  min-width: $minMax;
-  max-width: $minMax;
-  margin: $margin;
-}
-
-@mixin mediaQuery($pixels) {
-  @media screen and (min-width: $pixels) {
-    @content
-  }
+@mixin contentWidth {
+  max-width: 1255px;
+  width: 95%
 }
 
 * {
@@ -40,7 +35,6 @@ header {
     font-size: 2em;
     text-transform: uppercase;
     padding: .1em;
-    // background: blue;
   }
 
   @include mediaQuery (650px) {
@@ -79,26 +73,18 @@ header {
     width: 10%;
     margin-left: -10%;
     color: #FFF;
-    background: linear-gradient(141deg, #8eff4e, #4effab, #4ee6ff);
   }
-  // background: orange;
 }
 
-header {
-  width: 95%;
-  max-width: 1255px;
-  // background: pink;
+#toTop,
+.searchBtn,
+.giphLink {
+  background: linear-gradient(141deg, #8eff4e, $limeGreen, #4ee6ff);
+}
+
+header, ul {
+  @include contentWidth;
   margin: 0 auto;
-}
-
-.searchResults {
-  // background: orange;
-  ul {
-    // background: gold;
-    width: 95%;
-    max-width: 1255px;
-    margin: 0 auto;
-  }
 }
 
 .giphLink,
@@ -108,7 +94,6 @@ header {
 
 .giphLink {
   display: block;
-  background: linear-gradient(141deg, #8eff4e, #4effab, #4ee6ff);
   float: left;
   @include giphLinkDimensions(47%, 1.5%);
 
@@ -122,22 +107,18 @@ header {
 }
 
 .giph {
-  min-width: 100%;
-  max-width: 100%;
+  width: 100%;
 }
 
-.toTop {
+#toTop {
   position: fixed;
   bottom: .5em;
   right: .5em;
   font-size: 2em;
-  background: orange;
   padding: .2em;
 
   border-radius: 50%;
   color: #fff;
-
-  background: linear-gradient(141deg, #8eff4e, #4effab, #4ee6ff);
 }
 
 
@@ -147,7 +128,8 @@ header {
   clear: both;
 }
 
-.noneFound {
+.noneFound,
+.errorMessage {
   text-align: center;
   color: #FFF;
   max-width: 800px;
@@ -155,8 +137,8 @@ header {
 }
 
 .loader {
-    border: 10px solid #f3f3f3; /* Light grey */
-    border-top: 10px solid #4effab; /* Blue */
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid $limeGreen;
     border-radius: 50%;
     width: 5em;
     height: 5em;
