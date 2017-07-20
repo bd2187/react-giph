@@ -33,8 +33,7 @@ export default class GiphSearch extends Component {
 
   updateSearch = (val) => {
     this.setState({search: val, isFetching: true});
-    this.fetchGiphs("search", val)
-    this.props.history.replace(`/search/${val}`);
+    this.fetchGiphs("search", val);
   }
 
   backToTrending = () => {
